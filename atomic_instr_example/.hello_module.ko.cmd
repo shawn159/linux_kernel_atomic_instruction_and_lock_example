@@ -1,1 +1,0 @@
-cmd_/home/syslab/linux-class/atomic_instr_example/hello_module.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/syslab/linux-class/atomic_instr_example/hello_module.ko /home/syslab/linux-class/atomic_instr_example/hello_module.o /home/syslab/linux-class/atomic_instr_example/hello_module.mod.o ;  true
