@@ -20,7 +20,7 @@ struct my_node{
 	int data;
 };
 
-static int list_insert(void)
+static int list_insert(void *arg)
 {
 	struct my_node *new_node;
 	int i;
@@ -35,7 +35,7 @@ static int list_insert(void)
 	return 0;
 }
 
-static int list_traverse(void)
+static int list_traverse(void *arg)
 {
 	struct my_node *current_node;
 	down_read(&rwsem);
@@ -51,7 +51,7 @@ out:
 	return 0;
 }
 
-static int list_delete(void)
+static int list_delete(void *arg)
 {
 	struct my_node *current_node;
 delete:
@@ -118,9 +118,9 @@ int __init hello_module_init(void)
 
 void __exit hello_module_cleanup(void)
 {
-	printk("rw semaphore linked list insert time : %llu ns\n", time1);
-	printk("rw semaphore linked list search time : %llu ns\n", time2);
-	printk("rw semaphore linked list delete time : %llu ns\n", time3);
+	printk("rw_sem linked list insert time : %llu ns\n", time1);
+	printk("rw_sem linked list search time : %llu ns\n", time2);
+	printk("rw_sem linked list delete time : %llu ns\n", time3);
 	printk("Bye Module!");
 }
 

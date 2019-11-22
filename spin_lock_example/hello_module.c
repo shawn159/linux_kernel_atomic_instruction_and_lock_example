@@ -20,7 +20,7 @@ struct my_node{
 	int data;
 };
 
-static int list_insert(void)
+static int list_insert(void *arg)
 {
 	struct my_node *new_node;
 	int i;
@@ -35,7 +35,7 @@ static int list_insert(void)
 	return 0;
 }
 
-static int list_traverse(void)
+static int list_traverse(void *arg)
 {
 	struct my_node *current_node;
 	spin_lock(&list_lock);
@@ -51,7 +51,7 @@ out:
 	return 0;
 }
 
-static int list_delete(void)
+static int list_delete(void *arg)
 {
 	struct my_node *current_node;
 delete:
